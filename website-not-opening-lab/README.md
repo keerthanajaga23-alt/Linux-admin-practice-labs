@@ -34,6 +34,17 @@ To verify whether Apache is listening on port 80:
 sudo ss -tulnp
 ---
 
+### 3. Firewall check
+To verify firewall is enabled
+
+```bash
+sudo ufw status
+
+If blocked,then: 
+
+```bash
+sudo ufw allow 80 
+
 ### 3. Checked Apache configuration
 To identify configuration errors:
 
@@ -62,7 +73,7 @@ http://localhost
 
 Root Cause
 
-Apache service was stopped or website configuration was incorrect.
+Apache service website configuration was incorrect.
 
 Resolution
 
