@@ -50,6 +50,11 @@ To identify configuration errors:
 
 ```bash
 sudo apachectl configtest
+
+To fix configuration error need to use:
+
+```bash
+sudo nano /etc/apache2/ports.conf
 ---
 
 ### 4. Verified website files
