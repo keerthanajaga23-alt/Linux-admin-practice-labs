@@ -23,13 +23,13 @@ Identify whether the disk is nearing full capacity.
 
 # 2. Intentionally Create a Large File (Simulate Issue)
 
-fallocate -l 2G bigfile.img
+fallocate -l 940G bigfile.img
 
 ### Explanation
-This command creates a 2 GB dummy file to simulate a disk space problem.
+This command creates a 940 GB dummy file to simulate a disk space problem.
 
 * fallocate → Quickly allocates file size
-* -l 2G → Creates a 2 GB file
+* -l 940G → Creates a 940 GB file
 * bigfile.img → Name of the created file
 
 # 3. Verify Disk Usage Increased
@@ -60,7 +60,7 @@ This command checks which directories consume the most storage.
 
 # 5. Find Large Files
 
-find / -type f -size +100M 2>/dev/null
+find / -type f -size +100M 2>/dev/null -ls
 
 ### Explanation
 
