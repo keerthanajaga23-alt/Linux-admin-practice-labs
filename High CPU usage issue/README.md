@@ -40,16 +40,15 @@ The goal was to identify the root cause and restore normal server performance.
 
 Update package repository before installing tools.
 
-bash
+```bash
 sudo apt update
-
 ---
 
 # Step 2 — Install stress-ng
 
 Install the stress testing tool.
 
-bash
+```bash
 sudo apt install stress-ng -y
 
 Purpose:
@@ -60,7 +59,7 @@ Purpose:
 
 Run CPU stress process.
 
-bash
+```bash
 sudo stress-ng --cpu 2 --timeout 300s
 
 Explanation:
@@ -78,7 +77,7 @@ Expected Result:
 
 Open another terminal and check CPU utilization.
 
-bash
+```bash
 top
 
 Expected Observation:
@@ -91,10 +90,10 @@ Expected Observation:
 
 Install advanced monitoring tool.
 
-bash
+```bash
 sudo apt install htop -y
 
-bash
+```bash
 htop
 
 Purpose:
@@ -102,27 +101,11 @@ Purpose:
 * Provides a user-friendly live system monitoring interface.
 ---
 
-# Step 6 — Identify Top CPU Processes
-
-Display processes sorted by CPU usage.
-
-bash
-ps aux --sort=-%cpu | head
-
-Purpose:
-
-* Helps identify the process consuming the most CPU resources.
-
-Expected Result:
-
-* stress-ng appears at the top of the list.
----
-
-# Step 7 — Check System Load
+Step 6 — Check System Load
 
 Display system load average.
 
-bash
+```bash
 uptime
 
 Purpose:
@@ -134,10 +117,10 @@ Expected Result:
 * High load average during CPU stress.
 ---
 
-# Step 8 — Check CPU Information
+# Step 7 — Check CPU Information
 View CPU details.
 
-bash
+```bash
 lscpu
 
 Purpose:
@@ -145,10 +128,10 @@ Purpose:
 * Displays CPU architecture and processor information.
 ---
 
-# Step 9 — Check Running Services
+# Step 8 — Check Running Services
 View active system services.
 
-bash
+```bash
 systemctl list-units --type=service --state=running
 
 Purpose:
@@ -157,10 +140,10 @@ Purpose:
 
 ---
 
-# Step 10 — Find stress-ng Process ID
+# Step 9 — Find stress-ng Process ID
 Locate process ID.
 
-bash
+```bash
 ps aux | grep stress-ng
 
 Expected Result:
@@ -168,11 +151,11 @@ Expected Result:
 * Displays PID of stress-ng process.
 ---
 
-# Step 11 — Stop High CPU Process
+# Step 10 — Stop High CPU Process
 
 Terminate the process.
 
-bash
+```bash
 sudo kill -9 PID
 
 Replace:
@@ -184,11 +167,11 @@ Purpose:
 * Stops the high CPU consumption process.
 ---
 
-# Step 12 — Verify Issue Resolution
+# Step 11 — Verify Issue Resolution
 
 Check CPU usage again.
 
-bash
+```bash
 top
 
 
